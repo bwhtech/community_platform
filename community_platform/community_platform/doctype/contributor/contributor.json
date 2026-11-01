@@ -1,0 +1,192 @@
+{
+ "actions": [],
+ "autoname": "field:github_login",
+ "creation": "2026-10-31 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "github_login",
+  "user",
+  "column_break_1",
+  "github_id",
+  "joined_on",
+  "total_points",
+  "profile_section",
+  "company",
+  "website",
+  "column_break_2",
+  "x_handle",
+  "linkedin",
+  "youtube",
+  "products",
+  "accounts_section",
+  "discuss_username",
+  "verified_emails",
+  "column_break_3",
+  "last_github_sync",
+  "github_backfilled",
+  "last_external_sync"
+ ],
+ "fields": [
+  {
+   "fieldname": "github_login",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "GitHub Login",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User",
+   "search_index": 1,
+   "unique": 1,
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break",
+   "label": "Column Break 1"
+  },
+  {
+   "fieldname": "github_id",
+   "fieldtype": "Int",
+   "label": "GitHub ID"
+  },
+  {
+   "fieldname": "joined_on",
+   "fieldtype": "Date",
+   "label": "Joined On"
+  },
+  {
+   "description": "Sum of the Point Ledger",
+   "fieldname": "total_points",
+   "fieldtype": "Int",
+   "label": "Total Points",
+   "read_only": 1,
+   "is_virtual": 1
+  },
+  {
+   "fieldname": "profile_section",
+   "fieldtype": "Section Break",
+   "label": "Profile"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company"
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website",
+   "options": "URL"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break",
+   "label": "Column Break 2"
+  },
+  {
+   "fieldname": "x_handle",
+   "fieldtype": "Data",
+   "label": "X Handle"
+  },
+  {
+   "fieldname": "linkedin",
+   "fieldtype": "Data",
+   "label": "LinkedIn"
+  },
+  {
+   "fieldname": "youtube",
+   "fieldtype": "Data",
+   "label": "YouTube"
+  },
+  {
+   "fieldname": "products",
+   "fieldtype": "Table MultiSelect",
+   "label": "Products",
+   "options": "Contributor Product"
+  },
+  {
+   "fieldname": "accounts_section",
+   "fieldtype": "Section Break",
+   "label": "Connected Accounts"
+  },
+  {
+   "fieldname": "discuss_username",
+   "fieldtype": "Data",
+   "label": "Discuss Username"
+  },
+  {
+   "description": "One per line. Used to match events and Frappe School records.",
+   "fieldname": "verified_emails",
+   "fieldtype": "Small Text",
+   "label": "Verified Emails"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break",
+   "label": "Column Break 3"
+  },
+  {
+   "fieldname": "last_github_sync",
+   "fieldtype": "Datetime",
+   "label": "Last GitHub Sync",
+   "read_only": 1
+  },
+  {
+   "fieldname": "github_backfilled",
+   "fieldtype": "Check",
+   "label": "GitHub Backfilled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_external_sync",
+   "fieldtype": "Datetime",
+   "label": "Last External Sync",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-11-01 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Community Platform",
+ "name": "Contributor",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Community Admin",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "Community Moderator"
+  }
+ ],
+ "row_format": "Dynamic",
+ "show_title_field_in_link": 0,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

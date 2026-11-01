@@ -1,0 +1,146 @@
+{
+ "actions": [],
+ "creation": "2026-10-31 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "github_section",
+  "github_org",
+  "github_token",
+  "enable_github_sync",
+  "discuss_section",
+  "discuss_url",
+  "enable_discuss_sync",
+  "school_section",
+  "school_url",
+  "school_api_key",
+  "school_api_secret",
+  "enable_school_sync",
+  "events_section",
+  "events_url",
+  "events_api_key",
+  "events_api_secret",
+  "enable_events_sync"
+ ],
+ "fields": [
+  {
+   "fieldname": "github_section",
+   "fieldtype": "Section Break",
+   "label": "GitHub"
+  },
+  {
+   "default": "frappe",
+   "fieldname": "github_org",
+   "fieldtype": "Data",
+   "label": "GitHub Organization",
+   "reqd": 1
+  },
+  {
+   "description": "Personal access token used for the hourly search sync. Raises the rate limit from 10 to 30 searches a minute.",
+   "fieldname": "github_token",
+   "fieldtype": "Password",
+   "label": "GitHub Token"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_github_sync",
+   "fieldtype": "Check",
+   "label": "Enable GitHub Sync"
+  },
+  {
+   "fieldname": "discuss_section",
+   "fieldtype": "Section Break",
+   "label": "Discuss"
+  },
+  {
+   "default": "https://discuss.frappe.io",
+   "fieldname": "discuss_url",
+   "fieldtype": "Data",
+   "label": "Discuss URL"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_discuss_sync",
+   "fieldtype": "Check",
+   "label": "Enable Discuss Sync"
+  },
+  {
+   "fieldname": "school_section",
+   "fieldtype": "Section Break",
+   "label": "Frappe School"
+  },
+  {
+   "default": "https://school.frappe.io",
+   "fieldname": "school_url",
+   "fieldtype": "Data",
+   "label": "School URL"
+  },
+  {
+   "fieldname": "school_api_key",
+   "fieldtype": "Data",
+   "label": "School API Key"
+  },
+  {
+   "fieldname": "school_api_secret",
+   "fieldtype": "Password",
+   "label": "School API Secret"
+  },
+  {
+   "fieldname": "enable_school_sync",
+   "fieldtype": "Check",
+   "label": "Enable School Sync"
+  },
+  {
+   "fieldname": "events_section",
+   "fieldtype": "Section Break",
+   "label": "Events"
+  },
+  {
+   "default": "https://events.frappe.io",
+   "fieldname": "events_url",
+   "fieldtype": "Data",
+   "label": "Events URL"
+  },
+  {
+   "fieldname": "events_api_key",
+   "fieldtype": "Data",
+   "label": "Events API Key"
+  },
+  {
+   "fieldname": "events_api_secret",
+   "fieldtype": "Password",
+   "label": "Events API Secret"
+  },
+  {
+   "fieldname": "enable_events_sync",
+   "fieldtype": "Check",
+   "label": "Enable Events Sync"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-10-31 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Community Platform",
+ "name": "Community Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Community Admin",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -305,3 +305,36 @@ require_type_annotated_api_methods = True
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+
+# Community Platform
+# ------------------
+
+before_migrate = "community_platform.setup.before_migrate"
+after_migrate = "community_platform.setup.after_migrate"
+after_install = "community_platform.setup.after_install"
+
+on_session_creation = "community_platform.auth.on_session_creation"
+
+# The SPA lives at the site root. Each top-level route it owns renders
+# www/community.html; Frappe keeps /app, /login, /api and /assets.
+home_page = "community"
+website_route_rules = [
+	{"from_route": "/leaderboard", "to_route": "community"},
+	{"from_route": "/u/<path:login>", "to_route": "community"},
+	{"from_route": "/requests", "to_route": "community"},
+	{"from_route": "/requests/<path:id>", "to_route": "community"},
+	{"from_route": "/badges", "to_route": "community"},
+	{"from_route": "/me", "to_route": "community"},
+	{"from_route": "/join", "to_route": "community"},
+	{"from_route": "/admin/<path:page>", "to_route": "community"},
+]
+
+scheduler_events = {
+	"hourly_long": ["community_platform.sync.github.sync_all"],
+	"daily_long": [
+		"community_platform.sync.discuss.sync_all",
+		"community_platform.sync.school.sync_all",
+		"community_platform.sync.events.sync_all",
+	],
+	"daily": ["community_platform.tasks.award_last_month_badges"],
+}

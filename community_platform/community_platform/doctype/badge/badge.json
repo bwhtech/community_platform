@@ -1,0 +1,127 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2026-10-31 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "description",
+  "icon",
+  "color",
+  "column_break_1",
+  "criteria_type",
+  "action",
+  "threshold",
+  "rank_limit",
+  "product"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "default": "lucide-award",
+   "description": "A lucide icon class, e.g. lucide-rocket",
+   "fieldname": "icon",
+   "fieldtype": "Data",
+   "label": "Icon"
+  },
+  {
+   "default": "blue",
+   "fieldname": "color",
+   "fieldtype": "Select",
+   "label": "Color",
+   "options": "gray\ngreen\nblue\nviolet\namber\nred"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break",
+   "label": "Column Break 1"
+  },
+  {
+   "default": "action_count",
+   "fieldname": "criteria_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Criteria Type",
+   "options": "action_count\npoints_total\nmonthly_rank\nmanual",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.criteria_type=='action_count'",
+   "fieldname": "action",
+   "fieldtype": "Link",
+   "label": "Action",
+   "options": "Point Rule"
+  },
+  {
+   "depends_on": "eval:['action_count','points_total'].includes(doc.criteria_type)",
+   "fieldname": "threshold",
+   "fieldtype": "Int",
+   "label": "Threshold"
+  },
+  {
+   "depends_on": "eval:doc.criteria_type=='monthly_rank'",
+   "fieldname": "rank_limit",
+   "fieldtype": "Int",
+   "label": "Rank Limit"
+  },
+  {
+   "depends_on": "eval:['action_count','monthly_rank'].includes(doc.criteria_type)",
+   "fieldname": "product",
+   "fieldtype": "Link",
+   "label": "Product",
+   "options": "Product"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-10-31 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Community Platform",
+ "name": "Badge",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Community Admin",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "Community Moderator"
+  }
+ ],
+ "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title"
+}

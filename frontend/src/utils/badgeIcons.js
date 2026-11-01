@@ -1,0 +1,26 @@
+// Icons an admin can pick for a badge. Written out in full so Tailwind
+// generates them: badge icons come from the database, which it can't scan.
+export const BADGE_ICONS = [
+  'lucide-award',
+  'lucide-trophy',
+  'lucide-medal',
+  'lucide-rocket',
+  'lucide-bug',
+  'lucide-eye',
+  'lucide-git-merge',
+  'lucide-git-pull-request',
+  'lucide-mic',
+  'lucide-ticket',
+  'lucide-graduation-cap',
+  'lucide-gem',
+  'lucide-crown',
+  'lucide-shield-check',
+  'lucide-heart',
+  'lucide-star',
+  'lucide-flame',
+  'lucide-boxes',
+  'lucide-messages-square',
+  'lucide-sparkles',
+  'lucide-lightbulb',
+  'lucide-code-xml',
+]

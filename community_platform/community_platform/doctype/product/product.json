@@ -1,0 +1,111 @@
+{
+ "actions": [],
+ "autoname": "field:slug",
+ "creation": "2026-10-31 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "slug",
+  "product_name",
+  "logo",
+  "column_break_1",
+  "sort_order",
+  "mapping_section",
+  "repos",
+  "discuss_categories",
+  "school_courses"
+ ],
+ "fields": [
+  {
+   "description": "Short id used in URLs, e.g. erpnext",
+   "fieldname": "slug",
+   "fieldtype": "Data",
+   "label": "Slug",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "product_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Product Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "logo",
+   "fieldtype": "Attach Image",
+   "label": "Logo"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break",
+   "label": "Column Break 1"
+  },
+  {
+   "default": "0",
+   "fieldname": "sort_order",
+   "fieldtype": "Int",
+   "label": "Sort Order"
+  },
+  {
+   "description": "One per line. New mappings apply to new activity only.",
+   "fieldname": "mapping_section",
+   "fieldtype": "Section Break",
+   "label": "Mapped From"
+  },
+  {
+   "fieldname": "repos",
+   "fieldtype": "Small Text",
+   "label": "GitHub Repos"
+  },
+  {
+   "fieldname": "discuss_categories",
+   "fieldtype": "Small Text",
+   "label": "Discuss Categories"
+  },
+  {
+   "fieldname": "school_courses",
+   "fieldtype": "Small Text",
+   "label": "School Courses"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-10-31 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Community Platform",
+ "name": "Product",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Community Admin",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "Community Moderator"
+  }
+ ],
+ "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "product_name"
+}

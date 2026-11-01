@@ -1,0 +1,160 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2026-10-31 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "contributor",
+  "action",
+  "source",
+  "points",
+  "event_date",
+  "column_break_1",
+  "title",
+  "url",
+  "product",
+  "external_id",
+  "cap_target",
+  "revoke_section",
+  "is_revoke",
+  "revokes",
+  "reason"
+ ],
+ "fields": [
+  {
+   "fieldname": "contributor",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Contributor",
+   "options": "Contributor",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "action",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Action",
+   "options": "Point Rule",
+   "reqd": 1
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Select",
+   "label": "Source",
+   "options": "github\ndiscuss\nevents\nschool\nplatform"
+  },
+  {
+   "fieldname": "points",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Points"
+  },
+  {
+   "description": "IST day the activity happened",
+   "fieldname": "event_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Event Date",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break",
+   "label": "Column Break 1"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "length": 500
+  },
+  {
+   "fieldname": "url",
+   "fieldtype": "Data",
+   "label": "URL",
+   "length": 500
+  },
+  {
+   "fieldname": "product",
+   "fieldtype": "Link",
+   "label": "Product",
+   "options": "Product"
+  },
+  {
+   "fieldname": "external_id",
+   "fieldtype": "Data",
+   "label": "External ID",
+   "search_index": 1
+  },
+  {
+   "fieldname": "cap_target",
+   "fieldtype": "Data",
+   "label": "Cap Target"
+  },
+  {
+   "fieldname": "revoke_section",
+   "fieldtype": "Section Break",
+   "label": "Revoke"
+  },
+  {
+   "fieldname": "is_revoke",
+   "fieldtype": "Check",
+   "label": "Is Revoke"
+  },
+  {
+   "fieldname": "revokes",
+   "fieldtype": "Link",
+   "label": "Revokes",
+   "options": "Point Ledger",
+   "search_index": 1
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason"
+  }
+ ],
+ "in_create": 1,
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-10-31 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Community Platform",
+ "name": "Point Ledger",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 0,
+   "delete": 0,
+   "export": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "write": 0
+  },
+  {
+   "create": 0,
+   "delete": 0,
+   "export": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Community Admin",
+   "write": 0
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "Community Moderator"
+  }
+ ],
+ "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
+ "sort_field": "event_date",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title"
+}

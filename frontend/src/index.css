@@ -1,0 +1,28 @@
+@import 'frappe-ui/style.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * frappe-ui 1.0.0-rc.2: on phones SettingsDialog sizes itself to the full
+ * screen but still sits inside Dialog's padded, margined wrapper, so it spills
+ * off the edge and the outer layer scrolls instead of the settings body. Its
+ * panels also keep the 4.4rem desktop gutters. Scoped to the settings dialog
+ * (the only dialog with a vertical tab list) until this is fixed upstream.
+ */
+@media (max-width: 639px) {
+  .dialog-scroll-container > div:has([role='tablist'][aria-orientation='vertical']) {
+    padding: 0;
+  }
+  [role='dialog']:has([role='tablist'][aria-orientation='vertical']) {
+    margin: 0;
+    max-width: none;
+    border-radius: 0;
+  }
+  [role='dialog']:has([role='tablist'][aria-orientation='vertical']) .px-\[4\.4rem\] {
+    padding-inline: 1rem;
+  }
+  [role='dialog']:has([role='tablist'][aria-orientation='vertical']) .pt-10 {
+    padding-top: 1.25rem;
+  }
+}
