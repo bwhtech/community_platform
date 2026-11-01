@@ -1,0 +1,9 @@
+{
+	"private": true,
+	"name": "community_platform",
+	"scripts": {
+		"postinstall": "cd frontend && yarn install --check-files --frozen-lockfile",
+		"dev": "cd frontend && yarn dev",
+		"build": "cd frontend && yarn build"
+	}
+}

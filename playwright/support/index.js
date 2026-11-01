@@ -4,7 +4,6 @@ import { test as base, expect } from "@playwright/test";
 // user can post and vote like any GitHub-linked member, and is also an admin.
 export const ADMIN = "Administrator";
 export const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "admin";
-export const ADMIN_LOGIN = "rohan-mehta";
 
 export const test = base.extend({
 	// Pages start as Guest. Specs that need a session call `login()` first.

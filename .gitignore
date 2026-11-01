@@ -57,3 +57,7 @@ jspm_packages/
 # Built SPA
 community_platform/public/frontend/
 community_platform/www/community.html
+
+# Playwright
+test-results/
+playwright-report/
