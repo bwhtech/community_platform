@@ -4,6 +4,70 @@
 @tailwind utilities;
 
 /*
+ * Touch baseline. Hover needs nothing here: the frappe-ui preset turns on
+ * hoverOnlyWhenSupported, so `hover:` only fires on devices that can hover.
+ */
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    /* The shells own scrolling, so pulling past the top must not refresh the page */
+    overscroll-behavior: none;
+  }
+  body {
+    overscroll-behavior: none;
+  }
+  button,
+  a,
+  [role='button'],
+  [role='tab'] {
+    /* Fire click on tap without waiting to rule out a double-tap zoom */
+    touch-action: manipulation;
+  }
+  /* Long-press should not select a control's label. Links stay selectable: they can be content. */
+  button,
+  [role='button'],
+  [role='tab'] {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
+/*
+ * iOS zooms in on focus when a field's text is under 16px and does not zoom
+ * back out. frappe-ui inputs are 14px (text-base), and that utility outranks
+ * an element selector, hence !important.
+ */
+@media (pointer: coarse) {
+  input,
+  textarea,
+  select,
+  [contenteditable='true'] {
+    font-size: 16px !important;
+  }
+}
+
+/*
+ * viewport-fit=cover lets the page paint under the notch and home indicator,
+ * so the edges that touch them pad back in. A landscape phone gets the desktop
+ * shell, which is why #app takes the side insets as well.
+ */
+#app,
+[data-slot='mobile-shell'] {
+  padding-inline: env(safe-area-inset-left, 0px) env(safe-area-inset-right, 0px);
+}
+[data-slot='mobile-nav'],
+.bottom-sheet-content {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (display-mode: standalone) {
+  /* Keep frappe-ui's 1rem standalone gap on devices without a home indicator */
+  [data-slot='mobile-nav'] {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/*
  * frappe-ui 1.0.0-rc.2: on phones SettingsDialog sizes itself to the full
  * screen but still sits inside Dialog's padded, margined wrapper, so it spills
  * off the edge and the outer layer scrolls instead of the settings body. Its

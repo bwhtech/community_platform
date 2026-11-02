@@ -1,5 +1,5 @@
 <template>
-  <div class="grid min-h-screen place-content-center bg-surface-gray-1 px-4">
+  <div class="grid min-h-svh place-content-center bg-surface-gray-1 px-4">
     <div class="w-full max-w-sm rounded-6 border border-outline-gray-1 bg-surface-base p-8 shadow-sm">
       <img :src="LOGO" alt="" class="size-10" />
       <h1 class="mt-6 text-2xl font-semibold text-ink-gray-9">Join the Frappe community</h1>
