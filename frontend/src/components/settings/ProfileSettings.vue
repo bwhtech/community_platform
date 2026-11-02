@@ -7,15 +7,15 @@
     </template>
   </SettingsHeader>
 
-  <SettingsBody v-if="!profile">
+  <FadingSettingsBody v-if="!profile">
     <div class="space-y-4 pt-4" aria-busy="true">
       <div v-for="i in 5" :key="i" class="space-y-1.5">
         <Skeleton class="h-3 w-20 rounded-2" />
         <Skeleton class="h-7 w-full rounded-2" />
       </div>
     </div>
-  </SettingsBody>
-  <SettingsBody v-else>
+  </FadingSettingsBody>
+  <FadingSettingsBody v-else>
     <FileUploader
       class="pt-4"
       :private="false"
@@ -121,7 +121,7 @@
         </SettingsRow>
       </div>
     </template>
-  </SettingsBody>
+  </FadingSettingsBody>
 
   <ChangePasswordDialog v-model:open="showPassword" />
 </template>
@@ -137,7 +137,6 @@ import {
   FormControl,
   LoadingIndicator,
   MultiSelect,
-  SettingsBody,
   SettingsHeader,
   SettingsRow,
   Skeleton,
@@ -146,6 +145,7 @@ import {
   dialog,
 } from 'frappe-ui'
 import ChangePasswordDialog from '@/components/settings/ChangePasswordDialog.vue'
+import FadingSettingsBody from '@/components/settings/FadingSettingsBody.vue'
 import {
   connectDiscuss,
   disconnectDiscuss,

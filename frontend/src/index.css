@@ -68,6 +68,39 @@
 }
 
 /*
+ * Edge fades for a scroll container (see FadingSettingsBody). Registered so
+ * the fade sizes animate in and out instead of popping.
+ */
+@property --fade-top {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+@property --fade-bottom {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+.scroll-fade {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 var(--fade-top),
+    #000 calc(100% - var(--fade-bottom)),
+    transparent
+  );
+  transition:
+    --fade-top 150ms ease-out,
+    --fade-bottom 150ms ease-out;
+}
+.scroll-fade.fade-top {
+  --fade-top: 2rem;
+}
+.scroll-fade.fade-bottom {
+  --fade-bottom: 2rem;
+}
+
+/*
  * frappe-ui 1.0.0-rc.2: on phones SettingsDialog sizes itself to the full
  * screen but still sits inside Dialog's padded, margined wrapper, so it spills
  * off the edge and the outer layer scrolls instead of the settings body. Its
